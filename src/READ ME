@@ -1,0 +1,32 @@
+
+##TF CONSIDERACOES##
+
+#executaveis
+tf_laser:
+	caminho:/home/ubuntu/catkin_ws/src/robot_setup_tf/src
+	comando: rosrun robot_setup_tf tf_laser.cpp
+
+tf_odom:
+	caminho:/home/ubuntu/catkin_ws/src/robot_setup_tf/src
+	comando: rosrun robot_setup_tf tf_odom.cpp
+
+#tf_tree
+###mapa###
+#tf _requeridas:
+	odom -> base link   
+	base_link -> laser_frame (static tf)
+#tf_publicadas:
+	map -> odom 
+
+###odom###
+#tf _requeridas: 
+	None
+#tf_publicadas: 	
+	odom -> base link  
+
+###base_link###
+#tf _requeridas:
+	None
+#tf_publicadas:
+	base_link -> laser_frame 
+
