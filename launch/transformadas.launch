@@ -1,12 +1,7 @@
 <launch>
         <node pkg= "robot_setup_tf"      type="tf_odom"     name="tf_odom"  />
-
-        <!-- node pkg= "robot_setup_tf"      type="tf_laser"     name="tf_laser" / -->
-
- 	<node pkg="tf" type="static_transform_publisher" name="tf_FP_BL" args="0 0 0 0 0 0 1 base_footprint base_link 20" />
-
+	<node pkg="tf" type="static_transform_publisher" name="tf_FP_BL" args="0 0 0 0 0 0 1 base_footprint base_link 20" />
         <node pkg="tf" type="static_transform_publisher" name="tf_BL_LF" args="-0.13 0 0 0 0 0 1 base_link laser_frame 20" />
-
 </launch>
 
 
