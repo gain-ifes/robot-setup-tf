@@ -16,13 +16,13 @@ void PoseCallback(const geometry_msgs::Pose & msg){
 }
 
 int main(int argc, char** argv){
-	ros::init(argc, argv, "tf_odom_node");
+	ros::init(argc, argv, "tf_odom");
 
 	ros::NodeHandle n;
 	ros::Publisher odom_pub = n.advertise<nav_msgs::Odometry>("odom", 50);
 
-	ros::Subscriber subVel= n.subscribe("/Vel",10,&VelocityCallback);
-	ros::Subscriber subPos= n.subscribe("/Postura",10,&PoseCallback);
+	ros::Subscriber subVel= n.subscribe("/vel",10,&VelocityCallback);
+	ros::Subscriber subPos= n.subscribe("/pose",10,&PoseCallback);
 
 	tf::TransformBroadcaster odom_broadcaster;
 
