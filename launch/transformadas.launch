@@ -1,11 +1,17 @@
 <launch>
         <!-- Transformadas -->
+        
         <!-- Transformada de "odom" para "base_footprint" -->
-        <!-- <node pkg= "robot-setup-tf"      type="tf_odom"     name="tf_odom"  /> -->
+        <node pkg= "robot-setup-tf"      type="tf_odom"     name="tf_odom"  />
+
         <!-- Transformada de "base_footprint" para "base_link" -->
         <node pkg="tf" type="static_transform_publisher" name="base_footprint_to_base_link" args="0 0 0 0 0 0 1 base_footprint base_link 20"  />
+
         <!-- Transformada de "base_link" para "laser_frame" -->
         <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser_frame" args="-0.115 0 0 0 0 0 1 base_link laser_frame 20"  />
+
+        <!-- Transformada de "map" para "odom" estática (para testes sem o amcl) -->
+        <!-- <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 1 map odom 20"  /> -->
 </launch>
 
 
